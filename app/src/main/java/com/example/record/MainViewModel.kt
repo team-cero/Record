@@ -6,22 +6,21 @@ import androidx.lifecycle.ViewModel
 
 /**
  * MainViewModel
- * @date 2019/06/06
  **/
 class MainViewModel : ViewModel() {
 
-    val stepCountList = MutableLiveData<MutableList<Int>>()
+    val distanceCountList = MutableLiveData<MutableList<Int>>()
 
     init {
-        stepCountList.value = mutableListOf()
+        distanceCountList.value = mutableListOf()
     }
 
     //list
 
     @UiThread
-    fun addStepCount(count: Int) {
-        val list = stepCountList.value ?: return
+    fun addDistanceCount(count: Int) {
+        val list = distanceCountList.value ?: return
         list.add(count)
-        stepCountList.value = list
+        distanceCountList.value = list //
     }
 }

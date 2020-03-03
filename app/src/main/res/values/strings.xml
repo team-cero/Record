@@ -2,8 +2,8 @@
     <string name="app_name">MyKotlinApp</string>
 
     <string name="label_input_title">How long did you drive?</string>
-    <string name="label_step">Km</string>
-    <string name="hint_edit_step">enter the distance</string>
+    <string name="label_distance">Km</string>
+    <string name="hint_edit_distance">enter the distance</string>
     <string name="resist">Register</string>
     <string name="menu_label_add_record">Record</string>
     <string name="label_log_prefix">I drove</string>

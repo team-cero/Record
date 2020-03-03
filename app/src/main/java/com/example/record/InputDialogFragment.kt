@@ -19,8 +19,8 @@ class InputDialogFragment : DialogFragment() {
         builder.setView(view)
             .setNegativeButton(android.R.string.cancel, null)
             .setPositiveButton(R.string.resist) { _, _ ->
-                val step = view.editStep.text.toString()
-                viewModel.addStepCount(step.toInt())
+                val distance = view.editDistance.text.toString()
+                viewModel.addDistanceCount(distance.toInt())
             }
         return builder.create()
     }

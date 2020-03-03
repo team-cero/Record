@@ -10,7 +10,7 @@ import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import kotlinx.android.synthetic.main.activity_main.*
-import kotlinx.android.synthetic.main.item_step_log.view.*
+import kotlinx.android.synthetic.main.item_distance_log.view.*
 
 
 class MainActivity : AppCompatActivity() {
@@ -27,16 +27,16 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
 
         viewModel = ViewModelProviders.of(this).get(MainViewModel::class.java)
-        viewModel.stepCountList.observe(this, Observer { list ->
+        viewModel.distanceCountList.observe(this, Observer { list ->
             list?.let {
-                Log.d("MyKotlinApp", "stepCountList Changed!! :size = ${list.size}")
+                Log.d("MyKotlinApp", "distanceCountList Changed!! :size = ${list.size}")
                 adapter.setList(list)
             }
         })
 
         // initialize RecyclerView
         log_list.layoutManager = LinearLayoutManager(this)
-        adapter = LogRecyclerAdapter(viewModel.stepCountList.value!!)
+        adapter = LogRecyclerAdapter(viewModel.distanceCountList.value!!)
         log_list.adapter = adapter
         // add separator lines
         val decor = DividerItemDecoration(this, DividerItemDecoration.VERTICAL)
@@ -69,7 +69,7 @@ class MainActivity : AppCompatActivity() {
 
 class LogRecyclerAdapter(private var list: List<Int>) : RecyclerView.Adapter<LogRecyclerAdapter.LogViewHolder>() {
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): LogViewHolder {
-        val rowView = LayoutInflater.from(parent.context).inflate(R.layout.item_step_log, parent, false)
+        val rowView = LayoutInflater.from(parent.context).inflate(R.layout.item_distance_log, parent, false)
         return LogViewHolder(rowView)
     }
 
@@ -86,6 +86,6 @@ class LogRecyclerAdapter(private var list: List<Int>) : RecyclerView.Adapter<Log
     }
 
     class LogViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
-        val textCount = itemView.stepTextView!!
+        val textCount = itemView.distanceTextView!! //number of user input
     }
 }

@@ -19,8 +19,8 @@
             app:layout_constraintEnd_toEndOf="parent"
             android:layout_marginEnd="8dp"/>
     <EditText
-            android:id="@+id/editStep"
-            android:hint="@string/hint_edit_step"
+            android:id="@+id/editDistance"
+            android:hint="@string/hint_edit_distance"
             android:layout_width="200dp"
             android:layout_height="wrap_content"
             android:inputType="numberSigned"
@@ -34,11 +34,11 @@
             android:textAlignment="viewEnd"
             android:importantForAutofill="no"/>
     <TextView
-            android:id="@+id/label_step"
-            android:text="@string/label_step"
+            android:id="@+id/label_distance"
+            android:text="@string/label_distance"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            app:layout_constraintStart_toEndOf="@+id/editStep"
+            app:layout_constraintStart_toEndOf="@+id/editDistance"
             android:layout_marginStart="8dp"
-            app:layout_constraintBottom_toBottomOf="@+id/editStep"/>
+            app:layout_constraintBottom_toBottomOf="@+id/editDistance"/>
 </androidx.constraintlayout.widget.ConstraintLayout>
